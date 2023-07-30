@@ -162,8 +162,13 @@ h6 {
   margin-left: 20px;
 }
 
+.member-info: hover{
+  background-color: hotpink;
+}
+
 #topbar .social-links a:hover {
   color: white;
+  background-color: white;
 }
 
 /*--------------------------------------------------------------
