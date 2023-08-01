@@ -192,12 +192,6 @@
   </style>
 </head>
 <body>
-
-
-
-
-
-
     <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -237,20 +231,8 @@
     </div>
   </header><!-- End Header -->
 
-<div class="col-md-auto">
-          <a href="profile/{{id}}" class="profile-link">
-            <div class="profile-picture">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png" width="50px" height="50px" class="img-fluid rounded-circle">
-            </div>
-          </a>
-        </div>
-
-
-
-
       <div class="col-md-8">
         <div class="feed-container">
-          wdawdkdwbkawdkaws
           {% for x in dict1 %}
           {% if 'rates' in dict1[x] %}
           {% set rates = dict1[x]['rates'] %}
@@ -270,17 +252,7 @@
 
               </div>
               
-              {% if item not in dict1[seid]['added'].values() %}
-                
-                <a href='/add/{{rates[item]["name"]}}/{{x}}'><button class="join-btn">Join</button></a> <!-- Added Join Button -->
-
-              {% endif %}
-              {{item in dict1[seid]['added'].values()}}
-              {% if item in dict1[seid]['added'].values() %}
-                
-                <button class="join-btn">already in</button> <!-- Added Join Button -->
-
-              {% endif %}
+              
             </div>
           </div>
           {% endfor %}

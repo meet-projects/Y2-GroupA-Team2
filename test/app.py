@@ -191,6 +191,11 @@ def following():
   return render_template("following.html",id = dict3['username'],dict2=list(db.child('users').child(login_session['user']['localId']).get().val()['following'].values()),dict1 = db.child('users').get().val())
 
 
+
+@app.route('/events',methods=['GET'])  # '/' for the default page
+def events():
+  return render_template('events.html',db = db,dict1 = db.child('users').get().val())
+
 @app.route('/about',methods=['GET'])  # '/' for the default page
 def about():
   return render_template("about.html")
