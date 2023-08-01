@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Dark theme styles */
+    .dark-bg {
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+
+    .secondary-bg {
+      background-color: #303030;
+    }
+
+    .accent-bg {
+      background-color: #4c4c4c;
+    }
+
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #333;
+      margin-bottom: 20px;
+      border: 4px solid #4c4c4c;
+    }
+
+    .username {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .post-container {
+      width: 80%;
+      max-width: 400px;
+      background-color: #262626;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .post {
+      border-bottom: 1px solid #333;
+      padding: 10px 0;
+    }
+
+    .post:last-child {
+      border-bottom: none;
+    }
+
+    .post-content {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .corner-button {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #4c4c4c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .homescreen-button {
+      top: 15px;
+      left: 15px;
+    }
+
+    .logout-button {
+      top: 15px;
+      right: 15px;
+    }
+
+    .post-button {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 50px;
+      background-color: #4CAF50;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Follow button styles */
+    .follow-button {
+      position: absolute;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 40px;
+      background-color: #4CAF50;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Style for hover effect on buttons */
+    .corner-button:hover,
+    .post-button:hover,
+    .follow-button:hover {
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+<body class="dark-bg">
+  <div class="profile-container">
+    <div class="profile-picture"><img src={{db[id]['pic']}} width="150px" height="150px"></div>
+
+
+
+    <div class="username">{{db[id]['username']}}</div>
+
+
+
+    <div class="post-container">
+      {% for x in db[id]["rates"] %}
+        <div class="post">
+          <div class="post-content"><strong>Note:</strong> {{db[id]["rates"][x]["note"]}} </div>
+          <div class="post-content"><strong>Stars:</strong> {{db[id]["rates"][x]["star"]}} </div>
+          <div class="post-content"><strong>Name:</strong> {{db[id]["rates"][x]["name"]}} </div>
+          <div class="post-content"><img src="{{db[id]["rates"][x]["url"]}}" width="100%" height="auto"> 🌅</div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Homescreen and Logout Buttons -->
+    <div class="corner-button homescreen-button"><a href="/main">🏠</a></div>
+    <div class="corner-button logout-button"><a href="/login"> Logout</a></div>
+
+    <!-- Post Button -->
+    <br><br>
+
+
+
+
+    {% if seid == id%}
+    <div class="post-button"><a href="/add"> Add a Post</a></div>
+    {% endif%}
+    <!-- Follow Button -->
+    
+    <br>
+
+    {{r}}
+
+    {% if seid != id %}
+      {% if r == 0 %}
+        <a href="/follow/{{id}}"><div class="follow-button" id="followButton" >Follow</div></a>
+      {% endif %}
+    {% endif %}
+  </div>
+</body>
+</html>

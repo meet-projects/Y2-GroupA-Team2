@@ -33,7 +33,7 @@ app.config['SECRET_KEY'] = 'super-secret-key'
 
 @app.route('/',methods=['GET', 'POST'])  # '/' for the default page
 def index():
-  return render_template("index.html")
+  return render_template("arindex.html")
 
 
 
