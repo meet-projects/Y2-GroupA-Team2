@@ -42,7 +42,7 @@ def arabic():
 
 @app.route('/hrb',methods=['GET', 'POST'])  # '/' for the default page
 def hebrews():
-  return render_template("hrbindex.html")
+  return render_template("hbindex.html")
 
 
 
