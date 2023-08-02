@@ -6,27 +6,29 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
+      background-color: #ffffff;
       color: #fff;
       margin: 0;
       padding: 0;
     }
 
     .form-container {
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
       max-width: 400px;
       margin: 50px auto;
       padding: 20px;
-      background-color: #262626;
+      background-color: #DCDCDC;
       border-radius: 5px;
     }
 
     .form-input {
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
       display: block;
       width: 100%;
       padding: 10px;
       margin-bottom: 20px;
       border: 1px solid #333;
-      background-color: #1a1a1a;
+      background-color: #a9a9a9;
       color: #fff;
       border-radius: 3px;
       outline: none;
@@ -40,7 +42,7 @@
       display: block;
       width: 100%;
       padding: 12px;
-      background-color: #4CAF50;
+      background-color: #ffffff;
       color: #fff;
       border: none;
       border-radius: 3px;
@@ -58,15 +60,16 @@
 
 <body>
   <div class="form-container">
-    <h2>Add Movie/ show</h2>
+    <h2>Add posts</h2>
     <form action="/add" method="POST" style="max-width:500px;margin:auto">
 
-      <input type="text" class="form-input" placeholder="Movie Name" name = "name" required>
+      <input type="text" class="form-input" placeholder=" Name" name = "name" required>
       <input type="url" class="form-input" placeholder="Picture URL" name = "url" required>
       
       <textarea class="form-input" rows="4" placeholder="Note" name = "note"></textarea>
       
-      <button type="submit" class="form-button">Add Movie</button>
+      <button type="submit" class="form-button">Add post</button>
+      <center><a href="/main">back to main</a></center>
     </form>
   </div>
 </body>
