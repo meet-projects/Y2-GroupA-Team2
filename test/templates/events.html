@@ -108,12 +108,14 @@
     }
 
     .feed-container {
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
       max-width: 800px;
       margin: 90px auto 20px;
     }
 
     .feed-post {
-      background-color: #303030;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
@@ -217,12 +219,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto active" href="/home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/home">About</a></li>
+          <li><a class="nav-link scrollto" href="/#hero">Services</a></li>
            <li><a class="nav-link scrollto" href="/login">Events</a></li>
-          <li><a class="nav-link scrollto" href="#team">soical</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/#team">soical</a></li>
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="/login">Log Out</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -230,21 +232,23 @@
 
     </div>
   </header><!-- End Header -->
-
+      <center>
       <div class="col-md-8">
         <div class="feed-container">
           {% for x in dict1 %}
           {% if 'rates' in dict1[x] %}
           {% set rates = dict1[x]['rates'] %}
           {% for item in rates %}
+          <br>
 
 
 
           <div class="feed-post p-3 mb-4">
-            <div class="feed-post-heading">Post</div>
+            <div class="feed-post-heading"></div>
             <div class="feed-post-content">
-              <div class="post-content"><strong class="green-text">Name:</strong> <h2>{{ rates[item]["name"] }}</h2></div>
+              <div class="post-content"><strong class="green-text"></strong> <h2>{{ rates[item]["name"] }}</h2></div>
               
+              <div class="post-content"><strong class="green-text"></strong> <h2>{{ rates[item]["note"] }}</h2></div>
               <div class="post-content"><strong class="green-text">member:</strong> <h2>{{ rates[item]["number"] }}</h2></div>
               <div class="post-content">
                 <img src="{{ rates[item]["url"] }}" alt="Image" class="img-fluid rounded">
@@ -252,7 +256,7 @@
 
               </div>
               
-              
+              <br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
           </div>
           {% endfor %}
@@ -262,7 +266,7 @@
       </div>
     </div>
   </div>
-
+</center>
   <!-- Logout Button -->
 
   <div class="footer py-3 text-center">

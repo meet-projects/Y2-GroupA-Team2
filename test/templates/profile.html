@@ -5,15 +5,15 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
+      background-color: #B1B6BA;
+      color: #B1B6BA;
       margin: 0;
       padding: 0;
     }
 
     /* Dark theme styles */
     .dark-bg {
-      background-color: #1a1a1a;
+      background-color: #B1B6BA;
       color: #fff;
     }
 
@@ -51,7 +51,7 @@
     .post-container {
       width: 80%;
       max-width: 400px;
-      background-color: #262626;
+      background-color: #407AB0;
       padding: 20px;
       border-radius: 5px;
       margin-top: 20px;
@@ -104,7 +104,7 @@
       transform: translateX(-50%);
       width: 150px;
       height: 50px;
-      background-color: #4CAF50;
+      background-color: #3498db; /* Blue color for the post button */
       border-radius: 5px;
       display: flex;
       justify-content: center;
@@ -122,7 +122,7 @@
       transform: translateX(-50%);
       width: 120px;
       height: 40px;
-      background-color: #4CAF50;
+      background-color: #3498db; /* Blue color for the follow button */
       border-radius: 5px;
       display: flex;
       justify-content: center;
@@ -145,11 +145,7 @@
   <div class="profile-container">
     <div class="profile-picture"><img src={{db[id]['pic']}} width="150px" height="150px"></div>
 
-
-
     <div class="username">{{db[id]['username']}}</div>
-
-
 
     <div class="post-container">
       {% for x in db[id]["rates"] %}
@@ -169,9 +165,6 @@
     <!-- Post Button -->
     <br><br>
 
-
-
-
     {% if seid == id%}
     <div class="post-button"><a href="/add"> Add a Post</a></div>
     {% endif%}
@@ -183,7 +176,6 @@
 
     {% if seid != id %}
       {% if r == 0 %}
-      wdadwdawdawd
         <a href="/follow/{{id}}"><div class="follow-button" id="followButton" >Follow</div></a>
       {% endif %}
     {% endif %}

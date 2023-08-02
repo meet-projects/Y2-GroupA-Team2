@@ -36,6 +36,14 @@ def index():
   return render_template("arindex.html")
 
 
+@app.route('/arb',methods=['GET', 'POST'])  # '/' for the default page
+def arabic():
+  return render_template("arindex.html")
+
+@app.route('/hrb',methods=['GET', 'POST'])  # '/' for the default page
+def hebrews():
+  return render_template("hbindex.html")
+
 
 
 
